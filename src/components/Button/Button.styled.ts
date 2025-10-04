@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "../../constants/colors";
 import { fonts } from "../../constants/fonts";
 
-export const Button = styled.button`
+const Button = styled.button`
   padding: 8px 16px;
   border-radius: 100px;
   background: ${colors.mediumPrimary};
@@ -17,3 +17,5 @@ export const Button = styled.button`
     box-shadow: 0 0 15px ${colors.mediumPrimary};
   }
 `;
+
+export { Button };

@@ -34,19 +34,6 @@ const Logo = styled.a`
   }
 `;
 
-const List = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-flow: row wrap;
-  gap: 40px;
-`;
-
-const ListItem = styled.li`
-  font-size: 18px;
-`;
-
 const Credits = styled.a`
   color: ${colors.text};
   transition: transform 0.2s ease;
@@ -56,4 +43,4 @@ const Credits = styled.a`
   }
 `;
 
-export { List, HeaderStyle, ListItem, Logo, Credits };
+export { HeaderStyle, Logo, Credits };
