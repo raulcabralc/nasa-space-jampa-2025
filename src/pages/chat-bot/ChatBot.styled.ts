@@ -139,7 +139,7 @@ const BotMessage = styled.p`
   flex-flow: column wrap;
   align-items: flex-start;
   height: 50px;
-  border-radius: 50px 50px 50px 0;
+  border-radius: 40px 40px 40px 0;
   padding: 15px 20px;
   font-size: 18px;
   font-family: ${fonts.Raleway};
