@@ -48,7 +48,7 @@ function ChatBot() {
     ]);
 
     try {
-      const response = await axios.post("http://localhost:5000", {
+      const response = await axios.post("http://localhost:5000/ask", {
         text: inputValue,
       });
 

@@ -140,12 +140,13 @@ const BotMessage = styled.p`
   align-items: flex-start;
   height: 50px;
   border-radius: 50px 50px 50px 0;
-  padding: 10px 20px;
+  padding: 15px 20px;
   font-size: 18px;
   font-family: ${fonts.Raleway};
   font-weight: 500;
   color: ${colors.text};
   width: max-content;
+  max-width: 50%;
   background: ${colors.mediumWhite};
   justify-content: center;
   margin: 3px 0;
