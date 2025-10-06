@@ -62,11 +62,17 @@ const ChatBotInput = styled.input`
   &:focus {
     border-color: ${colors.darkerPrimary};
   }
+
+  &:disabled {
+    opacity: 70%;
+    background: ${colors.mediumWhite};
+    cursor: default;
+  }
 `;
 
 const InputButton = styled.button`
   position: absolute;
-  right: 15px;
+  right: 12px;
   top: 20px;
   background: ${colors.mediumPrimary};
   border: none;
@@ -83,6 +89,12 @@ const InputButton = styled.button`
 
   &:active {
     background: ${colors.darkerPrimary};
+  }
+
+  &:disabled {
+    opacity: 70%;
+    background: ${colors.mediumPrimary};
+    cursor: default;
   }
 `;
 
@@ -107,7 +119,19 @@ const UserMessage = styled.p`
   height: max-content;
   background: ${colors.darkPrimary};
   justify-content: center;
-  margin: 5px 0;
+  margin: 3px 0;
+  animation: fadeInUp 0.2s ease-out;
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 const BotMessage = styled.p`
@@ -124,6 +148,19 @@ const BotMessage = styled.p`
   width: max-content;
   background: ${colors.mediumWhite};
   justify-content: center;
+  margin: 3px 0;
+  animation: fadeInUp 0.2s ease-out;
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 export {

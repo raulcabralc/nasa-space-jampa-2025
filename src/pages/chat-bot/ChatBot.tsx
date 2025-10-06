@@ -11,6 +11,7 @@ import {
   UserMessage,
 } from "./ChatBot.styled";
 import { FaPaperPlane } from "react-icons/fa";
+import axios from "axios";
 
 interface Message {
   type: "user" | "bot";
@@ -21,14 +22,51 @@ function ChatBot() {
   const [isEmpty, setIsEmpty] = useState<boolean>(true);
   const [inputValue, setInputValue] = useState<string>("");
   const [messages, setMessages] = useState<Message[]>([]);
-  const [isInputEmpty, setIsInputEmpty] = useState<boolean>(true);
+  const [isSending, setIsSending] = useState<boolean>(false);
 
   function handleSendMessage() {
     if (inputValue.trim() !== "") {
       setIsEmpty(false);
       setMessages([...messages, { type: "user", text: inputValue }]);
       setInputValue("");
+      handleReceiveMessage();
     }
+  }
+
+  async function handleReceiveMessage() {
+    setIsSending(true);
+
+    await new Promise(resolve =>
+      setTimeout(() => {
+        resolve(null);
+      }, 150)
+    );
+
+    setMessages(prevMessages => [
+      ...prevMessages,
+      { type: "bot", text: "Pensando..." },
+    ]);
+
+    try {
+      const response = await axios.post("http://localhost:5000", {
+        text: inputValue,
+      });
+
+      setMessages(prevMessages => [
+        ...prevMessages.slice(0, -1),
+        { type: "bot", text: response.data.message },
+      ]);
+    } catch {
+      setMessages(prevMessages => [
+        ...prevMessages.slice(0, -1),
+        {
+          type: "bot",
+          text: "Sorry, something went wrong. Please try again later.",
+        },
+      ]);
+    }
+
+    setIsSending(false);
   }
 
   return (
@@ -46,6 +84,7 @@ function ChatBot() {
       <InputWrapper>
         <InputContainer>
           <ChatBotInput
+            disabled={isSending}
             value={inputValue}
             onChange={e => setInputValue(e.target.value)}
             placeholder="Ask anything about biological space"
@@ -57,7 +96,7 @@ function ChatBot() {
           />
           <InputButton
             onClick={handleSendMessage}
-            disabled={!inputValue.trim()}
+            disabled={inputValue.trim() === ""}
           >
             <FaPaperPlane size={26} />
           </InputButton>
