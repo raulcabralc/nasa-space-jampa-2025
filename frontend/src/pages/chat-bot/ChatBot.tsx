@@ -44,7 +44,7 @@ function ChatBot() {
 
     setMessages(prevMessages => [
       ...prevMessages,
-      { type: "bot", text: "Pensando..." },
+      { type: "bot", text: "Thinking..." },
     ]);
 
     try {

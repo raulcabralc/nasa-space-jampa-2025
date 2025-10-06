@@ -19,8 +19,9 @@ const Title = styled.h1`
   font-size: 3rem;
 `;
 
-const Small = styled.span`
+const Small = styled.a`
   font-size: 1rem;
+  color: ${colors.text};
 `;
 
 const Paragraph = styled.p`

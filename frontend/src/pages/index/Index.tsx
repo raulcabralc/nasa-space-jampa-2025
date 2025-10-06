@@ -14,13 +14,18 @@ function Index() {
     <IndexContainer>
       <Logo src={logoImg} alt="logo" />
       <Title>
-        BioSearch <Small>by Bullet in the Doll</Small>
+        BioSearch{" "}
+        <Small
+          target="_blank"
+          href="https://www.spaceappschallenge.org/2025/find-a-team/bullet-in-the-doll/"
+        >
+          by Bullet in the Doll
+        </Small>
       </Title>
       <Paragraph>
-        Uma IA desenvolvida para ajudar na busca de pesquisas em biologia
-        expacial
+        An AI developed to make spacial biology searches easier
       </Paragraph>
-      <Link href="/ask">Conversar com a IA</Link>
+      <Link href="/ask">Talk to the AI</Link>
     </IndexContainer>
   );
 }
