@@ -1,23 +1,27 @@
-import { useState } from "react";
-import { Button } from "../../components/Button/Button.styled";
+import logoImg from "../../assets/BioSearch.png";
+
+import {
+  IndexContainer,
+  Link,
+  Logo,
+  Paragraph,
+  Small,
+  Title,
+} from "./Index.styled";
 
 function Index() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <h1>Teste brabo!!</h1>
-      <h2>Teste brabo!!</h2>
-      <h3>Teste brabo!!</h3>
-      <p>Teste brabo!!</p>
-      <Button
-        onClick={() => {
-          setCount(count => count + 1);
-        }}
-      >
-        {count}
-      </Button>
-    </>
+    <IndexContainer>
+      <Logo src={logoImg} alt="logo" />
+      <Title>
+        BioSearch <Small>by Bullet in the Doll</Small>
+      </Title>
+      <Paragraph>
+        Uma IA desenvolvida para ajudar na busca de pesquisas em biologia
+        expacial
+      </Paragraph>
+      <Link href="/ask">Conversar com a IA</Link>
+    </IndexContainer>
   );
 }
 
