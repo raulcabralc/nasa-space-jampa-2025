@@ -147,6 +147,7 @@ const BotMessage = styled.p`
   color: ${colors.text};
   width: max-content;
   max-width: 50%;
+  height: max-content;
   background: ${colors.mediumWhite};
   justify-content: center;
   margin: 3px 0;
